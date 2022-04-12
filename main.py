@@ -14,7 +14,7 @@ def download_audio(message):
 	try:
 		print(f'{message.from_user.id} - {message.from_user.username} = download ')
 		yt_obj = YouTube(str(message))
-		bot.send_message(message.chat.id, 'Зачекай, іде скачування')
+		bot.send_message(message.chat.id, 'Зачекай, іде скачування...')
 		yt_obj.streams.get_audio_only().download(output_path='files/', filename=f'{yt_obj.title}.mp3')
 		print(f'YouTube audio {yt_obj.title} downloaded successfully')
 		audio = open(f'files/{yt_obj.title}.mp3', 'rb')
